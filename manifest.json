@@ -1,31 +1,34 @@
 {
-	"manifest_version": 2,
-	"name": "studydrive-downloader",
-	"description": "download files from studydrive",
-	"version": "1.0.0",
+    "manifest_version": 3,
+    "name": "studydrive-downloader",
+    "description": "download files from studydrive",
+    "version": "1.0.0",
 
-	"permissions": ["tabs"],
-	"host_permissions": ["*://*.studydrive.net/*"],
+    "permissions": ["tabs"],
+    "host_permissions": ["*://*.studydrive.net/*"],
 
-	"icons": {
-		"128": "icons/icon-128.png",
-		"48": "icons/icon-48.png",
-		"32": "icons/icon-32.png",
-		"16": "icons/icon-16.png"
-	},
+    "icons": {
+        "128": "icons/icon-128.png",
+        "48": "icons/icon-48.png",
+        "32": "icons/icon-32.png",
+        "16": "icons/icon-16.png"
+    },
 
-	"browser_action": {
-		"default_icon": "icons/icon-128.png",
-		"default_title": "Download from Studydrive"
-	},
+    "action": {
+        "default_icon": "icons/icon-128.png",
+        "default_title": "Download from Studydrive"
+    },
 
-	"background": {
-		"scripts": ["webextensions-polyfill.js", "background.js"]
-	},
-	"content_scripts": [
-		{
-			"matches": ["*://*.studydrive.net/*"],
-			"js": ["content.js"]
-		}
-	]
+    "background": {
+        "service_worker": "background.js",
+        "scripts": ["webextensions-polyfill.js", "background.js"],
+		"type": "module"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.studydrive.net/*"],
+            "js": ["content.js"]
+        }
+    ]
 }

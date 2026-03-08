@@ -20,7 +20,7 @@ const getDownloadUrl = (html, url) => {
     return `https://cdn.studydrive.net/d/prod/documents/${docId}/original/${docId}.${extension}?token=${token}`;
 }
 
-browser.browserAction.onClicked.addListener((tab) => {
+browser.action.onClicked.addListener((tab) => {
     if (!tab.url || !tab.url.includes("studydrive.net")) {
         console.error("nicht auf studydrive.net");
         return;
