@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "studydrive-downloader",
     "description": "download files from studydrive",
-    "version": "1.0.0",
+    "version": "1.0.1",
 
     "permissions": ["tabs"],
     "host_permissions": ["*://*.studydrive.net/*"],
